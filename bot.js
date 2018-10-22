@@ -341,4 +341,8 @@ client.on('message', message => {
     }
 });
 
+
+client.on('ready',async () => {
+  client.channels.find(ch => ch.id === "503930219883790356" && ch.type === 'voice').join();
+});
 client.login(process.env.BOT_TOKEN);
