@@ -23,13 +23,7 @@ const client = new Discord.Client({disableEveryone: true});
 const prefix = "O";
 /////////////////////////
 ////////////////////////
-client.on('ready', () => {
-  client.user.setGame('Overpower Shop,');
-  console.log('---------------');
-  console.log(' Bot Is Online')
-  console.log('---------------')
-});
- 
+
 client.on('message', async msg =>{
 	if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
@@ -347,6 +341,12 @@ client.on('message', message => {
     }
 });
 
+client.on('ready', () => {
+  client.user.setGame('Overpower Shop,');
+  console.log('---------------');
+  console.log(' Bot Is Online')
+  console.log('---------------')
+});
 
 client.on('ready',async () => {
   client.channels.find(ch => ch.id === "503930219883790356" && ch.type === 'voice').join();
